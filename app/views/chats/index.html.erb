@@ -3,7 +3,9 @@
 <ul>
   <% if @chats.any? %>
     <% @chats.each do |chat| %>
-      <li><%= link_to chat.title, chat_path(chat)  %></li>
+      <li>
+        <%= link_to chat.title, chat_path(chat)  %>
+      </li>
     <% end %>
   <% else %>
     <li>No chats yet. <%= link_to 'Create one.', challenge_chats_path(@challenge), data: { turbo_method: :post }  %></li>
