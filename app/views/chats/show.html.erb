@@ -33,8 +33,12 @@
   <% end %>
 </div>
 <div id="new_message">
-  <%= simple_form_for [@chat, @message] do |f| %>
+  <%= simple_form_for [@chat, @message], html: { data: { controller: 'spin '}} do |f| %>
     <%= f.input :content, placeholder: "Ask a question", required: true, label: false %>
-    <%= f.button :submit, 'Ask LLM', class: 'btn btn-primary' %>
+    <%= f.button :submit, 'Ask LLM', class: 'btn btn-primary', data: { action: 'click->spin#start'} %>
   <% end %>
 </div>
+<%# <a href="" data-action="click->controller#action"></a> %>
+<%# Controller -> it'll have it's own file, wrap it around all the HTML you need %>
+<%# Action -> addEventListener X, click->controller#action %>
+<%# Targets -> querySelector X %>

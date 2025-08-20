@@ -1,5 +1,6 @@
 class Message < ApplicationRecord
   belongs_to :chat
+  # validates :content, presence: true
 
   # @message.build_prompt
   def build_prompt
