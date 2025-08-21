@@ -9,6 +9,6 @@ export default class extends Controller {
       '<div class="btn btn-primary disabled"><i class="fa-solid fa-snowflake fa-spin"></i></div>'
     );
     event.currentTarget.remove();
-    this.element.submit();
+    this.element.requestSubmit();
   }
 }
