@@ -81,3 +81,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "rubocop", "~> 1.79"
+
+gem "solid_cable", "~> 1.0"

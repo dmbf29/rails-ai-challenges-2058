@@ -1,8 +1,8 @@
 <%# append (insertAdjacentHTML) %>
 <%# messages -> an ID of a div %>
-<%= turbo_stream.append "messages" do %>
+<%= turbo_stream.replace "messages" do %>
   <%# we will append this HTML partial to the of my message div %>
-  <%= render "messages/messages", messages: @chat.messages.order(:created_at).last(2) %>
+  <%= render "messages/messages", messages: @chat.messages.visible.order(:created_at) %>
 <% end %>
 <%= turbo_stream.replace "new_message" do %>
   <%= render "messages/form", chat: @chat, message: Message.new %>
